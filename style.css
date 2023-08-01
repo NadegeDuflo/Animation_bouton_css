@@ -57,9 +57,10 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     z-index: 2;
  }
-.Anim2, .Anim3, .Anim6{
+.box2, .box3, .box6{
     background-color:rgba(241, 241, 241, 0.5);
     position: relative;
     border:10px solid #f1f1f1;
@@ -80,9 +81,9 @@ h1{
     position: relative;
 }
 
- /* Animation 1 : Hello */
+ /* bouton 1 : Hello */
 
-.Anim1 a {
+.box1 a {
     position: relative;
     width: 100px;
     height: 50px;
@@ -91,7 +92,7 @@ h1{
     display: block;
     font-size: 24px;
 }
-.Anim1 a::before {
+.box1 a::before {
     content: "";
     position: absolute;
     top: -2px;
@@ -99,7 +100,7 @@ h1{
     border: 2px solid transparent;
 }
 
-.Anim1 a:hover::before {
+.box1 a:hover::before {
     animation: survol 1s linear forwards;
 }
 @keyframes survol {
@@ -129,7 +130,7 @@ h1{
     }
 }
 
-.Anim1 a::after {
+.box1 a::after {
     content: "";
     position: absolute;
     top: -2px;
@@ -137,7 +138,7 @@ h1{
     border: 2px solid transparent;
 }
 
-.Anim1 a:hover::after {
+.box1 a:hover::after {
     animation: survol2 1s linear forwards;
 }
 
@@ -169,13 +170,13 @@ h1{
 }
 
 
-/* Animation 2 : Reflet*/
+/* bouton 2 : Reflet*/
 
-.Anim2 .btn1 {
+.box2 .btn1 {
     overflow: hidden;
 }
 
-.Anim2 .btn1::before {
+.box2 .btn1::before {
     content: '';
     position: absolute;
     width: 200px;
@@ -184,20 +185,20 @@ h1{
     transform: rotate(-45deg);
     left: -150px;
 }
-.Anim2 .btn1:hover::before {
+.box2 .btn1:hover::before {
     transition: 0.8s transform linear;
     transform: translateX(500px) rotate(-45deg);
 }
 
 
-/* Animation 3 : pulse */
+/* bouton 3 : pulse */
 
-.Anim3 .btn2 {
+.box3 .btn2 {
     box-shadow: 0 0 0 0 #f1f1f1 inset;
     transition: box-shadow 0.3s linear;
 }
 
-.Anim3 .btn2::before {
+.box3 .btn2::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -205,20 +206,20 @@ h1{
     border: 2px solid #f1f1f1;
 }
 
-.Anim3 .btn2:hover {
+.box3 .btn2:hover {
     box-shadow: 0 0 50px -20px #f1f1f1 inset;
 }
 
-.Anim3 .btn2:hover::before {
+.box3 .btn2:hover::before {
     transition: all 0.3s linear;
     width: 120%;
     height: 150%;
     border: 2px solid transparent;
 }
 
-/* Animation 4 : Rainbow*/
+/* bouton 4 : Rainbow*/
 
-.Anim4{
+.box4{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -345,15 +346,15 @@ h1{
 
 /* Animation 5 : underline */
 
-.Anim5{
+.box5{
     position: relative;
 }
-.Anim5 a{
+.box5 a{
     font-size: 20px;
     cursor: pointer;
     position: relative;
 }
-.Anim5 a::after{
+.box5 a::after{
     content: "";
     display: block;
     width:0%;
@@ -363,25 +364,25 @@ h1{
     background-color: #333;
     transition: width 0.2s ease-in-out;
 }
-.Anim5 a:hover::after{
+.box5 a:hover::after{
     width:100%;
 }
 
-/* Animation 6 : light */
+/* bouton 6 : light */
 
 
-.Anim6 .btn3 {
+.box6 .btn3 {
     background-color: transparent;
     color: #f1f1f1;
     overflow: hidden;
     z-index: 2;
 }
 
-.Anim6 .btn3:hover {
+.box6 .btn3:hover {
     color: #3f3f3f;
 }
 
-.Anim6 .btn3::before {
+.box6 .btn3::before {
     content: "";
     background-color: #f1f1f1;
     width: 120%;
@@ -394,26 +395,22 @@ h1{
     transition: all 0.3s ease-in;
 }
 
-.Anim6 .btn3:hover::before {
+.box6 .btn3:hover::before {
     transform: translate(-50%, -50%) rotate(22deg) scaleY(2.1);
 }
 
-/* Animation 7 : Supprimer */
+/* Bouton end : Supprimer */
 
-.Anim7 {
-    position: relative;
-}
-
-.Anim7 .btn4 {
+.box-end .btn4 {
     border: 1px solid darkred;
     color: darkred;
     transition: background-color 0.3s ease;
 }
-.Anim7 .btn4:hover {
+.box-end .btn4:hover {
     background-color: darkred;
     color: #f1f1f1;  
 }
-.Anim7 .btn4::after{
+.box-end .btn4::after{
     content: "";
     position: fixed;
     top: 0;
@@ -425,31 +422,65 @@ h1{
     pointer-events: none;
 }
 
-.Anim7 .btn4:hover::after {
+.box-end .btn4:hover::after {
     background-color: rgba(0,0,0,0.8);
 
 }
 
-.Anim7 .btn4::before {
+.box-end .btn4::before {
     content:"!!WARNING!!";
     background-color: #f1f1f1;
     color: darkred;
-    padding: 15px;
+    padding: 10px;
     border-radius: 5px;
     display: none;
     position: absolute;
     top: 50px;
-    left: 90px;
-    width: 200px;
+    left: 10px;
+    width: 150px;
 }
 
-.Anim7 .btn4:hover::before {
+.box-end .btn4:hover::before {
     display: block;
     z-index: 10;
 }
 
-.Anim7 {
-    position: relative;
+
+/* Bouton 7 : floating avec tooltip*/
+
+
+.floating-btn {
+    width: 75px;
+    height: 75px;
+    background-image: linear-gradient(purple,violet);
+    border-radius: 50%;
+    border: none;
+    /* position: fixed;
+    bottom: 10px;
+    right: 10px; */
+}
+
+.floating-btn img {
+    width: 40px;
+    height: 40px;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 50%;
+    right: 140px;
+    font-size: 20px;
+    color: #f1f1f1;
+    background-color: #333;
+    border-radius: 3px;
+    padding: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s;
+}
+.floating-btn:hover .tooltip {
+    visibility: visible;
+    opacity: 0.8;
 }
 
 
